@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HeritageQuest | Indian Civilization & Culture</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                Heritage<span>Quest</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="navLinks">
+
+                <a href="#home">Home</a>
+                <a href="#history">History</a>
+                <a href="#culture">Culture</a>
+                <a href="#games">Games</a>
+                <a href="#knowledge">Knowledge</a>
+                <a href="#civilization-3d">3D World</a>
+
+                <button class="nav-icon" id="darkModeBtn" title="Change theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="bot-nav-btn" id="chatOpenNav">
+                    <i class="fa-solid fa-robot"></i>
+                    HeritageBot
+                </button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content reveal">
+
+            <div class="hero-badge">
+                <i class="fa-solid fa-landmark"></i>
+                Explore India's Living Heritage
+            </div>
+
+            <h1>
+                Discover the
+                <span>Story of India</span>
+            </h1>
+
+            <p>
+                Travel through ancient civilizations, powerful empires,
+                traditional arts and interactive games to experience
+                India's rich heritage in a fun and meaningful way.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" id="exploreBtn">
+                    Explore History
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button class="secondary-btn" id="heroGameBtn">
+                    <i class="fa-solid fa-gamepad"></i>
+                    Play Games
+                </button>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>5+</strong>
+                    <span>Major Eras</span>
+                </div>
+
+                <div>
+                    <strong>10+</strong>
+                    <span>Learning Games</span>
+                </div>
+
+                <div>
+                    <strong>100+</strong>
+                    <span>Heritage Facts</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="hero-scroll">
+            <i class="fa-solid fa-chevron-down"></i>
+            Scroll to explore
+        </div>
+
+    </section>
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="section intro-section">
+
+        <div class="section-heading reveal">
+
+            <span>WHY HERITAGEQUEST?</span>
+
+            <h2>
+                Learn History Through
+                <span>Experience</span>
+            </h2>
+
+            <p>
+                HeritageQuest combines historical knowledge with
+                interactive learning so that history becomes easier
+                to understand and remember.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card reveal">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-scroll"></i>
+                </div>
+
+                <h3>Historical Stories</h3>
+
+                <p>
+                    Explore civilizations, empires, monuments and
+                    important events from Indian history.
+                </p>
+            </article>
+
+
+            <article class="feature-card reveal">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+
+                <h3>Interactive Games</h3>
+
+                <p>
+                    Learn by solving quizzes, puzzles, memory games
+                    and historical challenges.
+                </p>
+            </article>
+
+
+            <article class="feature-card reveal">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+
+                <h3>Culture & Art</h3>
+
+                <p>
+                    Discover India's paintings, architecture, crafts,
+                    dance traditions and regional cultures.
+                </p>
+            </article>
+
+
+            <article class="feature-card reveal">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-cube"></i>
+                </div>
+
+                <h3>3D Learning</h3>
+
+                <p>
+                    Interact with simplified 3D historical environments
+                    and learn while playing.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= HISTORY ================= -->
+
+    <section class="section" id="history">
+
+        <div class="section-heading reveal">
+
+            <span>HISTORY</span>
+
+            <h2>
+                Journey Through
+                <span>Indian Civilization</span>
+            </h2>
+
+            <p>
+                Select an era to explore important civilizations,
+                rulers, monuments and achievements.
+            </p>
+
+        </div>
+
+
+        <div class="filter-buttons period-buttons">
+
+            <button class="period-btn active" data-period="all">
+                All
+            </button>
+
+            <button class="period-btn" data-period="ancient">
+                Ancient
+            </button>
+
+            <button class="period-btn" data-period="medieval">
+                Medieval
+            </button>
+
+            <button class="period-btn" data-period="modern">
+                Modern
+            </button>
+
+        </div>
+
+
+        <div class="history-grid">
+
+
+            <!-- INDUS -->
+
+            <article class="history-card reveal" data-period="ancient">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Mohenjo-daro.jpg?width=1200"
+                        alt="Mohenjo-daro ruins">
+
+                    <span class="era-label">Ancient</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>c. 2600–1900 BCE</small>
+
+                    <h3>Indus Valley Civilization</h3>
+
+                    <p>
+                        Famous for planned cities, drainage systems,
+                        brick architecture and the Great Bath.
+                    </p>
+
+                    <button class="learn-btn" data-info="indus">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- MAURYA -->
+
+            <article class="history-card reveal" data-period="ancient">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Lion_capital_of_Ashoka_at_Sarnath.jpg?width=1200"
+                        alt="Lion Capital of Ashoka">
+
+                    <span class="era-label">Ancient</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>c. 322–185 BCE</small>
+
+                    <h3>Maurya Empire</h3>
+
+                    <p>
+                        A major ancient Indian empire associated with
+                        Chandragupta Maurya and Emperor Ashoka.
+                    </p>
+
+                    <button class="learn-btn" data-info="maurya">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- GUPTA -->
+
+            <article class="history-card reveal" data-period="ancient">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Udayagiri_Caves_1.jpg?width=1200"
+                        alt="Udayagiri caves">
+
+                    <span class="era-label">Ancient</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>4th–6th century CE</small>
+
+                    <h3>Gupta Period</h3>
+
+                    <p>
+                        Known for achievements in mathematics, astronomy,
+                        literature, sculpture and architecture.
+                    </p>
+
+                    <button class="learn-btn" data-info="gupta">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- CHOLA -->
+
+            <article class="history-card reveal" data-period="medieval">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Brihadisvara_Temple_Gopuram.jpg?width=1200"
+                        alt="Brihadisvara Temple">
+
+                    <span class="era-label">Medieval</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>9th–13th century CE</small>
+
+                    <h3>Chola Power</h3>
+
+                    <p>
+                        Remembered for temple architecture, bronze
+                        sculpture, administration and maritime influence.
+                    </p>
+
+                    <button class="learn-btn" data-info="chola">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- SULTANATE -->
+
+            <article class="history-card reveal" data-period="medieval">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar_01.jpg?width=1200"
+                        alt="Qutub Minar">
+
+                    <span class="era-label">Medieval</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>1206–1526 CE</small>
+
+                    <h3>Delhi Sultanate</h3>
+
+                    <p>
+                        A series of dynasties that ruled large parts
+                        of the Indian subcontinent.
+                    </p>
+
+                    <button class="learn-btn" data-info="sultanate">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- VIJAYANAGARA -->
+
+            <article class="history-card reveal" data-period="medieval">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Hampi_Virupaksha_Temple.jpg?width=1200"
+                        alt="Hampi">
+
+                    <span class="era-label">Medieval</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>1336–1646 CE</small>
+
+                    <h3>Vijayanagara Empire</h3>
+
+                    <p>
+                        A powerful South Indian empire famous for Hampi,
+                        temples, markets and cultural achievements.
+                    </p>
+
+                    <button class="learn-btn" data-info="vijayanagara">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- MUGHAL -->
+
+            <article class="history-card reveal" data-period="medieval">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Agra_Fort,_Agra_03.jpg?width=1200"
+                        alt="Agra Fort">
+
+                    <span class="era-label">Medieval</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>1526–1857 CE</small>
+
+                    <h3>Mughal Empire</h3>
+
+                    <p>
+                        Known for architecture, gardens, miniature painting,
+                        administration and cultural synthesis.
+                    </p>
+
+                    <button class="learn-btn" data-info="mughal">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- MARATHA -->
+
+            <article class="history-card reveal" data-period="medieval">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/Raigad_Fort_entrance.jpg?width=1200"
+                        alt="Raigad Fort">
+
+                    <span class="era-label">Medieval</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>17th–19th century</small>
+
+                    <h3>Maratha Power</h3>
+
+                    <p>
+                        Remembered for Shivaji Maharaj, fort architecture,
+                        administration and the Maratha Confederacy.
+                    </p>
+
+                    <button class="learn-btn" data-info="maratha">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- MODERN -->
+
+            <article class="history-card reveal" data-period="modern">
+
+                <div class="history-image">
+                    <img
+                        src="https://commons.wikimedia.org/wiki/Special:FilePath/India_Gate_in_New_Delhi_at_Night.jpg?width=1200"
+                        alt="India Gate">
+
+                    <span class="era-label">Modern</span>
+                </div>
+
+                <div class="history-content">
+
+                    <small>1857–Present</small>
+
+                    <h3>Modern India</h3>
+
+                    <p>
+                        Explore India's freedom movement, independence,
+                        constitution and journey as a republic.
+                    </p>
+
+                    <button class="learn-btn" data-info="modern">
+                        Learn More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CULTURE ================= -->
+
+    <section class="section culture-section" id="culture">
+
+        <div class="section-heading reveal">
+
+            <span>CULTURE</span>
+
+            <h2>
+                India's
+                <span>Creative Heritage</span>
+            </h2>
+
+            <p>
+                Discover traditional art, architecture and crafts
+                from different regions of India.
+            </p>
+
+        </div>
+
+
+        <div class="filter-buttons culture-filters">
+
+            <button class="culture-filter active" data-region="all">
+                All
+            </button>
+
+            <button class="culture-filter" data-region="north">
+                North
+            </button>
+
+            <button class="culture-filter" data-region="south">
+                South
+            </button>
+
+            <button class="culture-filter" data-region="east">
+                East
+            </button>
+
+            <button class="culture-filter" data-region="west">
+                West
+            </button>
+
+            <button class="culture-filter" data-region="central">
+                Central
+            </button>
+
+            <button class="culture-filter" data-region="northeast">
+                Northeast
+            </button>
+
+        </div>
+
+
+        <div class="culture-grid">
+
+
+            <article class="culture-card reveal" data-region="east">
+
+                <div class="culture-icon">🎨</div>
+
+                <h3>Madhubani Painting</h3>
+
+                <p>
+                    A traditional painting style associated with Bihar,
+                    known for vibrant colors and detailed patterns.
+                </p>
+
+                <button class="culture-info-btn" data-info="madhubani">
+                    Discover
+                </button>
+
+            </article>
+
+
+            <article class="culture-card reveal" data-region="south">
+
+                <div class="culture-icon">🛕</div>
+
+                <h3>South Indian Temple Art</h3>
+
+                <p>
+                    Explore magnificent temples, sculptures,
+                    gopurams and stone craftsmanship.
+                </p>
+
+                <button class="culture-info-btn" data-info="temple">
+                    Discover
+                </button>
+
+            </article>
+
+
+            <article class="culture-card reveal" data-region="west">
+
+                <div class="culture-icon">🎨</div>
+
+                <h3>Warli Art</h3>
+
+                <p>
+                    A tribal art tradition using simple geometric
+                    forms to depict everyday life.
+                </p>
+
+                <button class="culture-info-btn" data-info="warli">
+                    Discover
+                </button>
+
+            </article>
+
+
+            <article class="culture-card reveal" data-region="north">
+
+                <div class="culture-icon">🧵</div>
+
+                <h3>Kashmiri Crafts</h3>
+
+                <p>
+                    Famous for carpets, embroidery, papier-mâché
+                    and detailed handicrafts.
+                </p>
+
+                <button class="culture-info-btn" data-info="kashmir">
+                    Discover
+                </button>
+
+            </article>
+
+
+            <article class="culture-card reveal" data-region="central">
+
+                <div class="culture-icon">🖌️</div>
+
+                <h3>Gond Art</h3>
+
+                <p>
+                    A tribal art tradition known for patterned
+                    depictions of animals, nature and stories.
+                </p>
+
+                <button class="culture-info-btn" data-info="gond">
+                    Discover
+                </button>
+
+            </article>
+
+
+            <article class="culture-card reveal" data-region="northeast">
+
+                <div class="culture-icon">🌿</div>
+
+                <h3>Northeastern Traditions</h3>
+
+                <p>
+                    Discover indigenous textiles, crafts, festivals
+                    and cultural traditions of Northeast India.
+                </p>
+
+                <button class="culture-info-btn" data-info="northeast">
+                    Discover
+                </button>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GAMES ================= -->
+
+    <section class="section games-section" id="games">
+
+        <div class="section-heading reveal">
+
+            <span>LEARN BY PLAYING</span>
+
+            <h2>
+                Interactive
+                <span>Heritage Games</span>
+            </h2>
+
+            <p>
+                Play, explore and learn about Indian history through
+                quizzes, puzzles and interactive 3D experiences.
+            </p>
+
+        </div>
+
+
+        <!-- GAME FILTER -->
+
+        <div class="game-filter-area">
+
+            <div class="filter-group">
+
+                <label for="gamePeriodFilter">
+                    Historical Period
+                </label>
+
+                <select id="gamePeriodFilter">
+
+                    <option value="all">All Periods</option>
+                    <option value="ancient">Ancient</option>
+                    <option value="medieval">Medieval</option>
+                    <option value="modern">Modern</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="filter-group">
+
+                <label for="gameTypeFilter">
+                    Game Type
+                </label>
+
+                <select id="gameTypeFilter">
+
+                    <option value="all">All Games</option>
+                    <option value="quiz">Quiz</option>
+                    <option value="3d">3D Game</option>
+                    <option value="memory">Memory</option>
+                    <option value="royal">Dress Game</option>
+
+                </select>
+
+            </div>
+
+
+            <button id="resetGameFilters" class="reset-filter">
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+            </button>
+
+        </div>
+
+
+        <div class="games-grid" id="gamesGrid">
+
+
+            <!-- QUIZ -->
+
+            <article class="game-card reveal"
+                data-period="ancient"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🏺
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Ancient India Challenge</h3>
+
+                <p>
+                    Test your knowledge of ancient civilizations,
+                    rulers and achievements.
+                </p>
+
+                <button class="play-btn" data-game="civilization">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- QUIZ -->
+
+            <article class="game-card reveal"
+                data-period="ancient"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🧩
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Ancient Puzzle</h3>
+
+                <p>
+                    Solve historical questions and unlock the
+                    next challenge.
+                </p>
+
+                <button class="play-btn" data-game="puzzle">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- QUIZ -->
+
+            <article class="game-card reveal"
+                data-period="ancient"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🏺
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Artifact Detective</h3>
+
+                <p>
+                    Identify ancient objects and discover what
+                    they tell us about the past.
+                </p>
+
+                <button class="play-btn" data-game="artifact">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- ROYAL -->
+
+            <article class="game-card reveal"
+                data-period="medieval"
+                data-type="royal">
+
+                <div class="game-card-icon">
+                    👑
+                </div>
+
+                <span class="game-tag">DRESS GAME</span>
+
+                <h3>Dress the Royal</h3>
+
+                <p>
+                    Select traditional royal clothing and create
+                    your historical character.
+                </p>
+
+                <button class="play-btn" data-game="royal">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- QUIZ -->
+
+            <article class="game-card reveal"
+                data-period="medieval"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🏰
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Monument Explorer</h3>
+
+                <p>
+                    Match monuments with their historical periods
+                    and locations.
+                </p>
+
+                <button class="play-btn" data-game="monument">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- QUIZ -->
+
+            <article class="game-card reveal"
+                data-period="ancient"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🦁
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Symbols of India</h3>
+
+                <p>
+                    Learn about important symbols connected
+                    with India's heritage.
+                </p>
+
+                <button class="play-btn" data-game="symbols">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- QUIZ -->
+
+            <article class="game-card reveal"
+                data-period="medieval"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🎨
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Traditional Art Challenge</h3>
+
+                <p>
+                    Test your knowledge of India's traditional
+                    paintings and artistic traditions.
+                </p>
+
+                <button class="play-btn" data-game="painting">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- MODERN -->
+
+            <article class="game-card reveal"
+                data-period="modern"
+                data-type="quiz">
+
+                <div class="game-card-icon">
+                    🇮🇳
+                </div>
+
+                <span class="game-tag">QUIZ</span>
+
+                <h3>Freedom Journey</h3>
+
+                <p>
+                    Explore important events and personalities
+                    of India's freedom movement.
+                </p>
+
+                <button class="play-btn" data-game="freedom">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- MEMORY -->
+
+            <article class="game-card reveal"
+                data-period="all"
+                data-type="memory">
+
+                <div class="game-card-icon">
+                    🧠
+                </div>
+
+                <span class="game-tag">MEMORY</span>
+
+                <h3>Heritage Memory</h3>
+
+                <p>
+                    Match pairs of Indian heritage symbols and
+                    improve your memory.
+                </p>
+
+                <button class="play-btn" data-game="memory">
+                    Play Game
+                    <i class="fa-solid fa-play"></i>
+                </button>
+
+            </article>
+
+
+            <!-- ================= NEW 3D GAME CARDS ================= -->
+
+
+            <article class="game-card game-card-3d reveal"
+                data-period="ancient"
+                data-type="3d">
+
+                <div class="three-d-card-preview city-preview">
+                    <div class="mini-house"></div>
+                    <div class="mini-road"></div>
+                    <div class="mini-bath"></div>
+                </div>
+
+                <span class="game-tag tag-3d">3D</span>
+
+                <h3>Build the Harappan City</h3>
+
+                <p>
+                    Place houses, roads, wells and drains to create
+                    an organized Harappan settlement.
+                </p>
+
+                <button class="play-3d-btn" data-3d="city">
+                    <i class="fa-solid fa-cube"></i>
+                    Play 3D Game
+                </button>
+
+            </article>
+
+
+            <article class="game-card game-card-3d reveal"
+                data-period="ancient"
+                data-type="3d">
+
+                <div class="three-d-card-preview bath-preview">
+                    <div class="bath-water"></div>
+                    <div class="bath-step"></div>
+                    <div class="bath-wall"></div>
+                </div>
+
+                <span class="game-tag tag-3d">3D</span>
+
+                <h3>Restore the Great Bath</h3>
+
+                <p>
+                    Reconstruct important parts of the Great Bath
+                    and learn about Harappan architecture.
+                </p>
+
+                <button class="play-3d-btn" data-3d="bath">
+                    <i class="fa-solid fa-cube"></i>
+                    Play 3D Game
+                </button>
+
+            </article>
+
+
+            <article class="game-card game-card-3d reveal"
+                data-period="medieval"
+                data-type="3d">
+
+                <div class="three-d-card-preview temple-preview">
+                    <div class="temple-base"></div>
+                    <div class="temple-pillar"></div>
+                    <div class="temple-tower"></div>
+                </div>
+
+                <span class="game-tag tag-3d">3D</span>
+
+                <h3>Build an Ancient Temple</h3>
+
+                <p>
+                    Build a simplified temple by placing its
+                    important architectural elements.
+                </p>
+
+                <button class="play-3d-btn" data-3d="temple">
+                    <i class="fa-solid fa-cube"></i>
+                    Play 3D Game
+                </button>
+
+            </article>
+
+
+            <article class="game-card game-card-3d reveal"
+                data-period="medieval"
+                data-type="3d">
+
+                <div class="three-d-card-preview fort-preview">
+                    <div class="fort-wall"></div>
+                    <div class="fort-tower"></div>
+                    <div class="fort-gate"></div>
+                </div>
+
+                <span class="game-tag tag-3d">3D</span>
+
+                <h3>Historic Fort Explorer</h3>
+
+                <p>
+                    Explore a 3D fort and find important defensive
+                    structures hidden around it.
+                </p>
+
+                <button class="play-3d-btn" data-3d="fort">
+                    <i class="fa-solid fa-cube"></i>
+                    Play 3D Game
+                </button>
+
+            </article>
+
+
+            <article class="game-card game-card-3d reveal"
+                data-period="ancient"
+                data-type="3d">
+
+                <div class="three-d-card-preview artifact-preview">
+                    <div class="artifact-pot"></div>
+                    <div class="artifact-light"></div>
+                </div>
+
+                <span class="game-tag tag-3d">3D</span>
+
+                <h3>Archaeological Artifact Hunt</h3>
+
+                <p>
+                    Search an excavation site and identify hidden
+                    historical artifacts.
+                </p>
+
+                <button class="play-3d-btn" data-3d="artifact">
+                    <i class="fa-solid fa-cube"></i>
+                    Play 3D Game
+                </button>
+
+            </article>
+
+
+            <article class="game-card game-card-3d reveal"
+                data-period="medieval"
+                data-type="3d">
+
+                <div class="three-d-card-preview court-preview">
+                    <div class="court-floor"></div>
+                    <div class="court-pillar left"></div>
+                    <div class="court-pillar right"></div>
+                    <div class="court-seat"></div>
+                </div>
+
+                <span class="game-tag tag-3d">3D</span>
+
+                <h3>Explore the Royal Court</h3>
+
+                <p>
+                    Explore a simplified royal court and discover
+                    objects connected with medieval life.
+                </p>
+
+                <button class="play-3d-btn" data-3d="court">
+                    <i class="fa-solid fa-cube"></i>
+                    Play 3D Game
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <div class="no-games" id="noGames">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <h3>No games found</h3>
+            <p>Try another filter.</p>
+        </div>
+
+    </section>
+
+
+    <!-- ================= 3D CIVILIZATION ================= -->
+
+    <section class="section civilization-section" id="civilization-3d">
+
+        <div class="three-d-layout">
+
+            <div class="three-d-intro reveal">
+
+                <span>IMMERSIVE LEARNING</span>
+
+                <h2>
+                    Explore India's
+                    <span>3D Civilization World</span>
+                </h2>
+
+                <p>
+                    Enter an interactive historical environment where
+                    you can explore civilizations and answer questions
+                    while interacting with a 3D world.
+                </p>
+
+                <div class="three-d-features">
+
+                    <div>
+                        <i class="fa-solid fa-hand-pointer"></i>
+                        <strong>Interact</strong>
+                        <small>Click historical objects</small>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <strong>Learn</strong>
+                        <small>Discover historical facts</small>
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-trophy"></i>
+                        <strong>Score</strong>
+                        <small>Complete challenges</small>
+                    </div>
+
+                </div>
+
+                <button class="primary-btn" id="open3DGame">
+                    Enter 3D World
+                    <i class="fa-solid fa-cube"></i>
+                </button>
+
+            </div>
+
+
+            <div class="three-d-preview reveal">
+
+                <div class="preview-label">
+                    <i class="fa-solid fa-cube"></i>
+                    INTERACTIVE 3D
+                </div>
+
+                <div class="preview-platform">
+
+                    <div class="preview-center">
+                        <div class="preview-monument"></div>
+                    </div>
+
+                    <div class="preview-ring ring-one"></div>
+                    <div class="preview-ring ring-two"></div>
+
+                    <div class="preview-node node-one">🏺</div>
+                    <div class="preview-node node-two">🦁</div>
+                    <div class="preview-node node-three">🛕</div>
+                    <div class="preview-node node-four">🏰</div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KNOWLEDGE ================= -->
+
+    <section class="section knowledge-section" id="knowledge">
+
+        <div class="section-heading reveal">
+
+            <span>KNOWLEDGE HUB</span>
+
+            <h2>
+                Discover
+                <span>Heritage Facts</span>
+            </h2>
+
+            <p>
+                Explore short and easy-to-understand facts about
+                India's historical achievements.
+            </p>
+
+        </div>
+
+
+        <div class="knowledge-grid">
+
+            <article class="knowledge-card reveal">
+
+                <div class="knowledge-icon">💧</div>
+
+                <h3>The Great Bath</h3>
+
+                <p>
+                    One of the best-known structures of Mohenjo-daro.
+                </p>
+
+                <button class="knowledge-btn" data-info="bath">
+                    Explore
+                </button>
+
+            </article>
+
+
+            <article class="knowledge-card reveal">
+
+                <div class="knowledge-icon">🦁</div>
+
+                <h3>Lion Capital</h3>
+
+                <p>
+                    The Lion Capital of Ashoka is an important symbol
+                    associated with India's national identity.
+                </p>
+
+                <button class="knowledge-btn" data-info="lion">
+                    Explore
+                </button>
+
+            </article>
+
+
+            <article class="knowledge-card reveal">
+
+                <div class="knowledge-icon">🔬</div>
+
+                <h3>Ancient Science</h3>
+
+                <p>
+                    Indian scholars made important contributions
+                    to mathematics, astronomy and medicine.
+                </p>
+
+                <button class="knowledge-btn" data-info="science">
+                    Explore
+                </button>
+
+            </article>
+
+
+            <article class="knowledge-card reveal">
+
+                <div class="knowledge-icon">🏰</div>
+
+                <h3>Indian Forts</h3>
+
+                <p>
+                    Forts were built for defence, administration
+                    and protection of important settlements.
+                </p>
+
+                <button class="knowledge-btn" data-info="forts">
+                    Explore
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <div class="fact-box reveal">
+
+            <div>
+                <span>RANDOM HERITAGE FACT</span>
+                <p id="factText">
+                    Click the button to discover a heritage fact.
+                </p>
+            </div>
+
+            <button id="newFact">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                New Fact
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                Heritage<span>Quest</span>
+            </div>
+
+            <p>
+                Learn. Explore. Play. Preserve.
+            </p>
+
+            <div class="footer-line"></div>
+
+            <small>
+                © <span id="year"></span> HeritageQuest.
+                Educational Heritage Platform.
+            </small>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= INFO MODAL ================= -->
+
+    <div class="modal" id="infoModal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" data-close="infoModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-icon" id="infoIcon">🏺</div>
+
+            <h2 id="infoTitle">Title</h2>
+
+            <p id="infoDescription"></p>
+
+            <div class="modal-facts" id="infoFacts"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= QUIZ MODAL ================= -->
+
+    <div class="modal" id="gameModal">
+
+        <div class="modal-content game-modal-content">
+
+            <button class="close-modal" data-close="gameModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-category" id="gameCategory">
+                QUIZ
+            </span>
+
+            <h2 id="gameTitle">Game</h2>
+
+            <p id="gameIntro"></p>
+
+            <div class="quiz-question" id="gameQuestion">
+                Question
+            </div>
+
+            <div class="quiz-options" id="gameOptions"></div>
+
+            <div class="quiz-footer">
+
+                <div>
+                    Score:
+                    <strong id="gameScore">0</strong>
+                </div>
+
+                <button id="nextGameBtn" disabled>
+                    Next
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MEMORY MODAL ================= -->
+
+    <div class="modal" id="memoryModal">
+
+        <div class="modal-content memory-content">
+
+            <button class="close-modal" data-close="memoryModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-category">MEMORY GAME</span>
+
+            <h2>Heritage Memory</h2>
+
+            <p>
+                Find matching pairs of Indian heritage symbols.
+            </p>
+
+            <div class="memory-info">
+                Moves: <strong id="memoryMoves">0</strong>
+            </div>
+
+            <div class="memory-grid" id="memoryGrid"></div>
+
+            <button class="primary-btn small-btn" id="restartMemory">
+                <i class="fa-solid fa-rotate"></i>
+                Restart
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= ROYAL DRESS ================= -->
+
+    <div class="modal" id="royalModal">
+
+        <div class="modal-content royal-content">
+
+            <button class="close-modal" data-close="royalModal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <span class="modal-category">DRESS GAME</span>
+
+            <h2>Dress the Royal Character</h2>
+
+            <p>
+                Select traditional clothing pieces and create
+                your own historical character.
+            </p>
+
+            <div class="royal-character">
+                <div class="royal-head">👤</div>
+                <div class="royal-body">🧥</div>
+            </div>
+
+            <div class="royal-select">
+
+                <button data-choice="pagdi">👳 Pagdi</button>
+                <button data-choice="crown">👑 Crown</button>
+                <button data-choice="turban">🧕 Turban</button>
+                <button data-choice="angarkha">🥻 Angarkha</button>
+                <button data-choice="jama">👘 Jama</button>
+                <button data-choice="royalrobe">🧥 Royal Robe</button>
+
+            </div>
+
+            <div class="royal-result" id="royalResult">
+                Choose at least two items.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!--                   3D GAME MODAL                   -->
+    <!-- ================================================= -->
+
+    <div class="modal three-d-modal" id="civilization3DModal">
+
+        <div class="three-d-game-window">
+
+            <button class="three-d-close" id="close3DGame">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+
+            <!-- LEFT INSTRUCTIONS -->
+
+            <aside class="three-d-sidebar">
+
+                <span class="modal-category" id="threeDCategory">
+                    3D LEARNING GAME
+                </span>
+
+                <h2 id="threeDTitle">
+                    Build the Harappan City
+                </h2>
+
+                <div class="game-instruction">
+
+                    <div class="instruction-title">
+                        <i class="fa-solid fa-bullseye"></i>
+                        GOAL
+                    </div>
+
+                    <p id="threeDGoal">
+                        Build an organized Harappan settlement.
+                    </p>
+
+                </div>
+
+
+                <div class="game-instruction">
+
+                    <div class="instruction-title">
+                        <i class="fa-solid fa-gamepad"></i>
+                        HOW TO PLAY
+                    </div>
+
+                    <ol id="threeDHowTo">
+                        <li>Select an object.</li>
+                        <li>Click an empty location.</li>
+                        <li>Place the object correctly.</li>
+                    </ol>
+
+                </div>
+
+
+                <div class="game-instruction">
+
+                    <div class="instruction-title">
+                        <i class="fa-solid fa-computer-mouse"></i>
+                        CONTROLS
+                    </div>
+
+                    <p id="threeDControls">
+                        Click objects to interact. Drag to look around.
+                    </p>
+
+                </div>
+
+
+                <div class="learning-box">
+
+                    <strong>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        WHAT YOU LEARN
+                    </strong>
+
+                    <p id="threeDLearn">
+                        Harappan town planning and drainage systems.
+                    </p>
+
+                </div>
+
+
+                <div class="three-d-stats">
+
+                    <div>
+                        <small>SCORE</small>
+                        <strong id="threeDScore">0</strong>
+                    </div>
+
+                    <div>
+                        <small>TIME</small>
+                        <strong>
+                            <span id="threeDTime">120</span>s
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="threeDProgressBar"></div>
+                </div>
+
+
+                <button class="hint-btn" id="threeDHint">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Hint
+                </button>
+
+                <button class="next-3d-btn" id="threeDNext">
+                    Next Task
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <button class="restart-3d-btn" id="threeDRestart">
+                    <i class="fa-solid fa-rotate"></i>
+                    Restart Game
+                </button>
+
+            </aside>
+
+
+            <!-- RIGHT 3D WORLD -->
+
+            <main class="three-d-main">
+
+                <div class="three-d-topbar">
+
+                    <div>
+                        <i class="fa-solid fa-cube"></i>
+                        Interactive 3D World
+                    </div>
+
+                    <span id="threeDTaskLabel">
+                        Task 1
+                    </span>
+
+                </div>
+
+
+                <div id="threeDCanvasWrap">
+
+                    <canvas id="threeDCanvas"></canvas>
+
+                    <div class="three-d-overlay">
+
+                        <div class="three-d-question">
+                            <span id="threeDQuestion">
+                                Select the correct object.
+                            </span>
+                        </div>
+
+                        <div class="three-d-options" id="threeDOptions"></div>
+
+                        <div class="hierarchy-box"
+                            id="threeDHierarchy">
+                            Select an object in the 3D world to learn
+                            more.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= CHATBOT ================= -->
+
+    <div class="chatbot" id="chatbot">
+
+        <div class="chat-header">
+
+            <div>
+                <i class="fa-solid fa-robot"></i>
+                <strong>HeritageBot</strong>
+            </div>
+
+            <button id="closeChat">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="chat-messages" id="chatMessages">
+
+            <div class="bot-message">
+                Hello! 👋 I am HeritageBot.
+                Ask me about Indian history and culture.
+            </div>
+
+        </div>
+
+
+        <div class="quick-questions">
+
+            <button data-question="Tell me about Indus Valley Civilization">
+                Indus Valley
+            </button>
+
+            <button data-question="Who was Ashoka?">
+                Ashoka
+            </button>
+
+            <button data-question="Tell me about Gupta period">
+                Gupta
+            </button>
+
+        </div>
+
+
+        <div class="chat-input">
+
+            <input
+                type="text"
+                id="chatInput"
+                placeholder="Ask HeritageBot...">
+
+            <button id="sendChat">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button class="floating-chat" id="floatingChat">
+        <i class="fa-solid fa-robot"></i>
+    </button>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div class="heritage-toast" id="heritageToast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
