@@ -1408,10 +1408,13 @@
         <div class="fact-box reveal">
 
             <div>
-                <span>RANDOM HERITAGE FACT</span>
+                <span class="fact-badge" id="factTopic">LIVE HISTORICAL FACT</span>
                 <p id="factText">
-                    Click the button to discover a heritage fact.
+                    Loading live heritage fact from Wikipedia...
                 </p>
+                <a href="#" id="factLink" class="fact-link" target="_blank" rel="noopener noreferrer" style="display: none;">
+                    Read article on Wikipedia <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
             </div>
 
             <button id="newFact">
@@ -1462,11 +1465,31 @@
 
             <div class="modal-icon" id="infoIcon">🏺</div>
 
+            <div class="info-meta-row" id="infoMetaRow">
+                <span class="info-badge" id="infoSourceBadge">
+                    <i class="fa-brands fa-wikipedia-w"></i> Live Wikipedia Data
+                </span>
+                <span class="info-badge weather-badge" id="infoWeatherBadge" style="display: none;">
+                    <i class="fa-solid fa-cloud-sun"></i> Loading weather...
+                </span>
+            </div>
+
             <h2 id="infoTitle">Title</h2>
+
+            <div class="info-image-wrap" id="infoImageWrap" style="display: none;">
+                <img id="infoImage" src="" alt="Historical artifact or monument">
+            </div>
 
             <p id="infoDescription"></p>
 
             <div class="modal-facts" id="infoFacts"></div>
+
+            <div class="modal-footer-action" id="infoFooterAction">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="wiki-link-btn" id="infoWikiLink">
+                    Explore on Wikipedia
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
 
         </div>
 

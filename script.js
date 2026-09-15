@@ -159,407 +159,282 @@ $$(".reveal").forEach((element) => {
 
 
 /* =========================================================
-   HISTORY DATA
+   PUBLIC API SERVICE & HERITAGE TOPICS
 ========================================================= */
 
-const historyData = {
-
+const heritageTopics = {
     indus: {
-
         icon: "🏺",
-
-        title: "Indus Valley Civilization",
-
-        description:
-            "The Indus Valley Civilization developed one of the earliest urban cultures of South Asia. Cities such as Mohenjo-daro and Harappa are known for organized streets, brick construction and sophisticated drainage.",
-
-        facts: [
-            "Major sites include Harappa and Mohenjo-daro.",
-            "The civilization used standardized brick sizes.",
-            "The Great Bath is one of Mohenjo-daro's best-known structures.",
-            "Urban planning and drainage were important features."
-        ]
-
+        slug: "Indus_Valley_Civilisation",
+        fallbackTitle: "Indus Valley Civilization",
+        fallbackDesc: "The Indus Valley Civilisation was a Bronze Age civilisation in northwestern South Asia, famous for planned cities like Mohenjo-daro and Harappa, standardized bricks, and advanced drainage systems.",
+        coords: { lat: 27.3257, lon: 68.1385, name: "Mohenjo-daro" }
     },
-
-
     maurya: {
-
         icon: "🦁",
-
-        title: "Maurya Empire",
-
-        description:
-            "The Maurya Empire was one of the major empires of ancient India. Chandragupta Maurya established the empire, while Ashoka became especially known for his inscriptions and support for Buddhism.",
-
-        facts: [
-            "Chandragupta Maurya founded the empire.",
-            "Ashoka ruled a large part of the Indian subcontinent.",
-            "Ashokan inscriptions provide valuable historical evidence.",
-            "The Lion Capital of Ashoka is an important national symbol."
-        ]
-
+        slug: "Maurya_Empire",
+        fallbackTitle: "Maurya Empire",
+        fallbackDesc: "A geographically extensive Iron Age historical power founded by Chandragupta Maurya, which reached its zenith under Ashoka the Great, known for edicts and the Lion Capital.",
+        coords: { lat: 25.3811, lon: 83.0214, name: "Sarnath" }
     },
-
-
     gupta: {
-
         icon: "📜",
-
-        title: "Gupta Period",
-
-        description:
-            "The Gupta period is associated with important developments in mathematics, astronomy, literature, sculpture and architecture.",
-
-        facts: [
-            "Sanskrit literature flourished.",
-            "Mathematical and astronomical ideas developed.",
-            "Sculptural traditions became highly refined.",
-            "Udayagiri is an important archaeological site."
-        ]
-
+        slug: "Gupta_Empire",
+        fallbackTitle: "Gupta Empire",
+        fallbackDesc: "An ancient Indian empire known as the Golden Age of India, marked by extensive inventions and discoveries in science, technology, engineering, art, astronomy, and philosophy.",
+        coords: { lat: 25.4358, lon: 81.8463, name: "Prayagraj" }
     },
-
-
     chola: {
-
         icon: "🛕",
-
-        title: "Chola Power",
-
-        description:
-            "The Cholas became a major power in South India. They are particularly famous for monumental temples, bronze sculptures, administration and maritime activity.",
-
-        facts: [
-            "Brihadisvara Temple is a major Chola monument.",
-            "Chola bronze sculptures are highly celebrated.",
-            "The Cholas developed strong maritime connections.",
-            "Temple institutions played important social roles."
-        ]
-
+        slug: "Chola_dynasty",
+        fallbackTitle: "Chola Dynasty",
+        fallbackDesc: "One of the longest-ruling dynasties in world history, famed for monumental Dravidian temples such as Brihadisvara, magnificent lost-wax bronze sculptures, and maritime power.",
+        coords: { lat: 10.7828, lon: 79.1318, name: "Thanjavur" }
     },
-
-
     sultanate: {
-
         icon: "🏰",
-
-        title: "Delhi Sultanate",
-
-        description:
-            "The Delhi Sultanate refers to a series of dynasties that ruled large areas of northern India between the 13th and early 16th centuries.",
-
-        facts: [
-            "Several dynasties ruled during the Sultanate period.",
-            "Delhi became an important political centre.",
-            "Indo-Islamic architectural traditions developed.",
-            "Qutb Minar is an important monument from this period."
-        ]
-
+        slug: "Delhi_Sultanate",
+        fallbackTitle: "Delhi Sultanate",
+        fallbackDesc: "An Islamic empire based in Delhi that stretched over large parts of South Asia for 320 years across five dynasties, creating iconic monuments like the Qutb Minar.",
+        coords: { lat: 28.5244, lon: 77.1855, name: "Delhi" }
     },
-
-
     vijayanagara: {
-
-        icon: "🛕",
-
-        title: "Vijayanagara Empire",
-
-        description:
-            "The Vijayanagara Empire became a major political and cultural power in South India. Its capital at Hampi contains extensive temples, markets and public structures.",
-
-        facts: [
-            "Hampi was the capital.",
-            "Krishnadevaraya was one of its prominent rulers.",
-            "Temple architecture flourished.",
-            "Hampi contains extensive archaeological remains."
-        ]
-
-    },
-
-
-    mughal: {
-
         icon: "🏛️",
-
-        title: "Mughal Empire",
-
-        description:
-            "The Mughal Empire had a major influence on architecture, gardens, painting, administration and culture in the Indian subcontinent.",
-
-        facts: [
-            "Babur established Mughal rule in India.",
-            "Mughal architecture combined several artistic traditions.",
-            "Miniature painting developed strongly.",
-            "Agra and Delhi became important imperial centres."
-        ]
-
+        slug: "Vijayanagara_Empire",
+        fallbackTitle: "Vijayanagara Empire",
+        fallbackDesc: "Based in the Deccan region with its imperial capital at Hampi, renowned for magnificent temple complexes, stone chariots, and thriving international commerce.",
+        coords: { lat: 15.3350, lon: 76.4600, name: "Hampi" }
     },
-
-
+    mughal: {
+        icon: "👑",
+        slug: "Mughal_Empire",
+        fallbackTitle: "Mughal Empire",
+        fallbackDesc: "An early-modern empire that ruled most of northern and central India, famous for Indo-Islamic architecture including the Taj Mahal, Red Fort, and Shalimar Gardens.",
+        coords: { lat: 27.1751, lon: 78.0421, name: "Agra" }
+    },
     maratha: {
-
         icon: "⚔️",
-
-        title: "Maratha Power",
-
-        description:
-            "The Maratha movement became a major political force in western India. Shivaji Maharaj is particularly remembered for administration, forts and military organization.",
-
-        facts: [
-            "Shivaji Maharaj established an important Maratha state.",
-            "Forts played an important strategic role.",
-            "Raigad became an important capital.",
-            "The Maratha Confederacy later became a major power."
-        ]
-
+        slug: "Maratha_Empire",
+        fallbackTitle: "Maratha Empire",
+        fallbackDesc: "Founded by Chhatrapati Shivaji Maharaj in 1674, known for innovative guerrilla warfare (Ganimi Kava), extensive hill fort networks, and powerful naval presence.",
+        coords: { lat: 18.2356, lon: 73.4475, name: "Raigad Fort" }
     },
-
-
     modern: {
-
         icon: "🇮🇳",
-
-        title: "Modern India",
-
-        description:
-            "Modern Indian history includes colonial rule, the freedom movement, independence in 1947 and the development of India as a democratic republic.",
-
-        facts: [
-            "The Revolt of 1857 was an important event.",
-            "The freedom movement involved many leaders and organizations.",
-            "India became independent in 1947.",
-            "The Constitution came into effect in 1950."
-        ]
-
+        slug: "History_of_the_Republic_of_India",
+        fallbackTitle: "Republic of India",
+        fallbackDesc: "The modern constitutional democratic republic established after independence in 1947, guided by the Constitution of 1950 drafted under Dr. B. R. Ambedkar.",
+        coords: { lat: 28.6139, lon: 77.2090, name: "New Delhi" }
     },
-
-
-    /* CULTURE */
-
     madhubani: {
-
         icon: "🎨",
-
-        title: "Madhubani Painting",
-
-        description:
-            "Madhubani painting is a traditional art form associated especially with the Mithila region of Bihar.",
-
-        facts: [
-            "It is also called Mithila painting.",
-            "Artists use strong lines and detailed patterns.",
-            "Nature, mythology and everyday life are common themes.",
-            "Different traditional styles exist within Madhubani art."
-        ]
-
+        slug: "Madhubani_art",
+        fallbackTitle: "Madhubani Art",
+        fallbackDesc: "A celebrated folk art originating from the Mithila region of Bihar, characterized by geometric patterns, natural dye pigments, and depictions of nature and mythology.",
+        coords: { lat: 26.3537, lon: 86.0718, name: "Mithila" }
     },
-
-
     temple: {
-
         icon: "🛕",
-
-        title: "South Indian Temple Art",
-
-        description:
-            "South Indian temples are known for elaborate stone sculpture, monumental gateways, pillars and detailed architectural planning.",
-
-        facts: [
-            "Gopurams are prominent gateway structures.",
-            "Stone sculpture is an important artistic tradition.",
-            "Temple complexes often contain multiple functional spaces.",
-            "Chola temples are important examples."
-        ]
-
+        slug: "Hindu_temple_architecture",
+        fallbackTitle: "Temple Architecture of India",
+        fallbackDesc: "The diverse architectural traditions of Indian temples including Nagara, Dravida, and Vesara styles, featuring intricately carved shikhara, gopurams, and mandapas.",
+        coords: { lat: 9.9195, lon: 78.1193, name: "Madurai" }
     },
-
-
     warli: {
-
-        icon: "🎨",
-
-        title: "Warli Art",
-
-        description:
-            "Warli painting is associated with communities of Maharashtra and uses simple geometric forms to depict people, animals and daily life.",
-
-        facts: [
-            "Circles, triangles and lines are commonly used.",
-            "Nature and community life are frequent subjects.",
-            "Traditional Warli art has a distinctive visual language.",
-            "The art has gained recognition beyond its original communities."
-        ]
-
+        icon: "🌾",
+        slug: "Warli_painting",
+        fallbackTitle: "Warli Tribal Art",
+        fallbackDesc: "An ancient tribal art style created by the Warli community of Maharashtra using white rice paste, portraying circular village dances, harvests, and Mother Nature.",
+        coords: { lat: 19.9975, lon: 73.7898, name: "Maharashtra" }
     },
-
-
     kashmir: {
-
-        icon: "🧵",
-
-        title: "Kashmiri Crafts",
-
-        description:
-            "Kashmir has a long tradition of textile, carpet, embroidery and papier-mâché craftsmanship.",
-
-        facts: [
-            "Carpet weaving is an important craft tradition.",
-            "Embroidery includes detailed decorative patterns.",
-            "Papier-mâché is a well-known craft.",
-            "Traditional craftsmanship is passed between generations."
-        ]
-
+        icon: "🧣",
+        slug: "Pashmina",
+        fallbackTitle: "Kashmir Pashmina & Shawl Weaving",
+        fallbackDesc: "Renowned hand-spun cashmere wool woven by Kashmiri master artisans into luxurious shawls celebrated globally for softness, warmth, and Sozni embroidery.",
+        coords: { lat: 34.0837, lon: 74.7973, name: "Srinagar" }
     },
-
-
     gond: {
-
-        icon: "🖌️",
-
-        title: "Gond Art",
-
-        description:
-            "Gond art is associated with tribal communities of central India and frequently depicts animals, plants, nature and stories.",
-
-        facts: [
-            "Nature is an important source of inspiration.",
-            "Artists often use patterns and dots.",
-            "Animals may be decorated with intricate designs.",
-            "The tradition has evolved into contemporary forms."
-        ]
-
+        icon: "🌳",
+        slug: "Gond_art",
+        fallbackTitle: "Gond Folk Painting",
+        fallbackDesc: "A revered indigenous art form created by the Gond tribal community of central India, known for intricate signature patterns of dots and lines celebrating forests and wildlife.",
+        coords: { lat: 22.9734, lon: 78.6569, name: "Madhya Pradesh" }
     },
-
-
     northeast: {
-
-        icon: "🌿",
-
-        title: "Northeastern Traditions",
-
-        description:
-            "Northeast India contains diverse indigenous communities with rich traditions in textiles, crafts, music, festivals and architecture.",
-
-        facts: [
-            "The region has many distinct communities.",
-            "Traditional weaving is important.",
-            "Natural materials are frequently used in crafts.",
-            "Festivals express community identity and heritage."
-        ]
-
+        icon: "🧵",
+        slug: "Culture_of_Northeast_India",
+        fallbackTitle: "Handlooms of Northeast India",
+        fallbackDesc: "Rich living craft traditions across eight states including Assam golden Muga silk, Naga tribal weaves, and Manipuri textiles reflecting distinct cultural identities.",
+        coords: { lat: 26.1445, lon: 91.7362, name: "Guwahati" }
     },
-
-
-    /* KNOWLEDGE */
-
     bath: {
-
-        icon: "💧",
-
-        title: "The Great Bath",
-
-        description:
-            "The Great Bath is one of the most famous structures at Mohenjo-daro. It consists of a large brick-lined tank and surrounding architectural features.",
-
-        facts: [
-            "It was built with carefully arranged bricks.",
-            "The structure was designed to hold water.",
-            "Its exact purpose is still interpreted by historians.",
-            "It demonstrates sophisticated construction."
-        ]
-
+        icon: "🌊",
+        slug: "The_Great_Bath,_Mohenjo-daro",
+        fallbackTitle: "The Great Bath of Mohenjo-daro",
+        fallbackDesc: "A world-famous public water basin excavated in Sindh, built with precision-fitted baked bricks, gypsum mortar, and bitumen waterproofing over 4,500 years ago.",
+        coords: { lat: 27.3257, lon: 68.1385, name: "Mohenjo-daro" }
     },
-
-
     lion: {
-
         icon: "🦁",
-
-        title: "Lion Capital of Ashoka",
-
-        description:
-            "The Lion Capital from Sarnath is an important Mauryan-period sculpture and forms the basis of India's State Emblem.",
-
-        facts: [
-            "It dates to the Mauryan period.",
-            "It is associated with Emperor Ashoka.",
-            "The sculpture depicts four lions.",
-            "The Dharma Chakra appears in the emblem derived from it."
-        ]
-
+        slug: "Lion_Capital_of_Ashoka",
+        fallbackTitle: "Lion Capital of Ashoka",
+        fallbackDesc: "A polished Chunar sandstone sculpture originally erected atop an Ashoka Pillar at Sarnath around 250 BCE, adopted as the State Emblem of modern India.",
+        coords: { lat: 25.3811, lon: 83.0214, name: "Sarnath" }
     },
-
-
     science: {
-
-        icon: "🔬",
-
-        title: "Ancient Indian Science",
-
-        description:
-            "Indian scholars contributed to mathematics, astronomy, medicine, metallurgy and other fields over many centuries.",
-
-        facts: [
-            "Indian mathematical traditions included sophisticated numerical ideas.",
-            "Astronomical observations were systematically recorded.",
-            "Ayurvedic traditions developed over long periods.",
-            "Metallurgical skills are visible in historical objects."
-        ]
-
+        icon: "🔭",
+        slug: "History_of_science_and_technology_in_the_Indian_subcontinent",
+        fallbackTitle: "Ancient Indian Science & Astronomy",
+        fallbackDesc: "Foundational contributions to humanity including the invention of Zero, the decimal system, Aryabhata's astronomical algorithms, and Sushruta's surgical treatises.",
+        coords: { lat: 25.6110, lon: 85.1440, name: "Pataliputra" }
     },
-
-
     forts: {
-
         icon: "🏰",
-
-        title: "Indian Forts",
-
-        description:
-            "Forts were important defensive and administrative structures. Different regions developed different fort-building traditions based on geography.",
-
-        facts: [
-            "Hill forts used natural elevation for defence.",
-            "Sea forts used coastal geography.",
-            "Fort gates were often heavily protected.",
-            "Many forts also contained palaces and administrative buildings."
-        ]
-
+        slug: "Hill_Forts_of_Rajasthan",
+        fallbackTitle: "Hill Forts & Citadels of India",
+        fallbackDesc: "Monumental defensive fortresses like Chittorgarh, Kumbhalgarh, and Mehrangarh illustrating defensive Rajput and Maratha military architecture and rainwater harvesting.",
+        coords: { lat: 24.8887, lon: 74.6269, name: "Chittorgarh" }
     }
-
 };
 
+/* In-memory API caches */
+const wikiSummaryCache = {};
+const weatherCache = {};
+
+/* Fetch Wikipedia Summary via Public REST API */
+async function fetchWikipediaSummary(slug) {
+    if (wikiSummaryCache[slug]) {
+        return wikiSummaryCache[slug];
+    }
+
+    try {
+        const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(slug)}`;
+        const response = await fetch(url, {
+            headers: { "Accept": "application/json" },
+            signal: AbortSignal.timeout(5000)
+        });
+
+        if (!response.ok) {
+            throw new Error(`Wikipedia API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        wikiSummaryCache[slug] = data;
+        return data;
+    } catch (err) {
+        console.warn(`Could not fetch live Wikipedia data for ${slug}:`, err);
+        return null;
+    }
+}
+
+/* Fetch Live Weather via Open-Meteo Public API */
+async function fetchHeritageWeather(lat, lon) {
+    const key = `${lat.toFixed(2)},${lon.toFixed(2)}`;
+    if (weatherCache[key]) {
+        return weatherCache[key];
+    }
+
+    try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`;
+        const res = await fetch(url, { signal: AbortSignal.timeout(4000) });
+        if (!res.ok) throw new Error("Weather fetch failed");
+        const data = await res.json();
+        weatherCache[key] = data.current_weather;
+        return data.current_weather;
+    } catch (err) {
+        console.warn("Could not fetch weather:", err);
+        return null;
+    }
+}
+
+/* Map Open-Meteo weather codes to descriptive labels and icons */
+function getWeatherDescription(code) {
+    if (code === 0) return { label: "Clear Sky", icon: "fa-sun" };
+    if (code <= 3) return { label: "Partly Cloudy", icon: "fa-cloud-sun" };
+    if (code <= 48) return { label: "Foggy", icon: "fa-smog" };
+    if (code <= 67) return { label: "Rainy", icon: "fa-cloud-rain" };
+    if (code <= 77) return { label: "Snowy", icon: "fa-snowflake" };
+    if (code <= 82) return { label: "Showers", icon: "fa-cloud-showers-heavy" };
+    return { label: "Thunderstorm", icon: "fa-bolt" };
+}
 
 /* =========================================================
-   INFORMATION MODAL
+   INFORMATION MODAL (POWERED BY WIKIPEDIA REST API)
 ========================================================= */
 
-function openInfo(key) {
+async function openInfo(key) {
+    const topic = heritageTopics[key];
+    if (!topic) return;
 
-    const data = historyData[key];
+    // Reset and show initial modal
+    $("#infoIcon").textContent = topic.icon;
+    $("#infoTitle").textContent = topic.fallbackTitle;
+    $("#infoDescription").textContent = "Fetching live summary from Wikipedia...";
+    $("#infoFacts").innerHTML = `<div class="fact-item"><i class="fa-solid fa-spinner fa-spin"></i> Loading verified encyclopedia facts...</div>`;
 
-    if (!data) return;
+    const imageWrap = $("#infoImageWrap");
+    const infoImg = $("#infoImage");
+    const weatherBadge = $("#infoWeatherBadge");
+    const wikiLink = $("#infoWikiLink");
 
-    $("#infoIcon").textContent = data.icon;
-
-    $("#infoTitle").textContent = data.title;
-
-    $("#infoDescription").textContent = data.description;
-
-    $("#infoFacts").innerHTML =
-        data.facts
-            .map(
-                fact =>
-                    `<div class="fact-item">
-                        <i class="fa-solid fa-check"></i>
-                        ${fact}
-                    </div>`
-            )
-            .join("");
+    if (imageWrap) imageWrap.style.display = "none";
+    if (weatherBadge) weatherBadge.style.display = "none";
+    if (wikiLink) {
+        wikiLink.href = `https://en.wikipedia.org/wiki/${encodeURIComponent(topic.slug)}`;
+    }
 
     $("#infoModal").classList.add("active");
 
+    // Fetch live Wikipedia data
+    const wikiData = await fetchWikipediaSummary(topic.slug);
+
+    if (wikiData) {
+        $("#infoTitle").textContent = wikiData.title || topic.fallbackTitle;
+        $("#infoDescription").textContent = wikiData.extract || topic.fallbackDesc;
+
+        if (wikiData.thumbnail && wikiData.thumbnail.source && imageWrap && infoImg) {
+            infoImg.src = wikiData.thumbnail.source;
+            infoImg.alt = wikiData.title;
+            imageWrap.style.display = "block";
+        }
+
+        // Dynamically extract highlight sentences
+        const extract = wikiData.extract || "";
+        const sentences = extract.split(/(?<=[.?!])\s+/).filter(s => s.trim().length > 20);
+        const highlights = sentences.slice(0, 4);
+
+        if (highlights.length > 0) {
+            $("#infoFacts").innerHTML = highlights
+                .map(
+                    sentence =>
+                        `<div class="fact-item">
+                            <i class="fa-solid fa-check"></i>
+                            ${sentence}
+                        </div>`
+                )
+                .join("");
+        }
+    } else {
+        // Graceful fallback
+        $("#infoTitle").textContent = topic.fallbackTitle;
+        $("#infoDescription").textContent = topic.fallbackDesc;
+        $("#infoFacts").innerHTML = `<div class="fact-item"><i class="fa-solid fa-landmark"></i> Historical landmark preserved in Indian cultural history.</div>`;
+    }
+
+    // Fetch live atmospheric weather for heritage coordinates
+    if (topic.coords && weatherBadge) {
+        weatherBadge.style.display = "inline-flex";
+        weatherBadge.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Checking weather at ${topic.coords.name}...`;
+
+        const weather = await fetchHeritageWeather(topic.coords.lat, topic.coords.lon);
+        if (weather) {
+            const desc = getWeatherDescription(weather.weathercode);
+            weatherBadge.innerHTML = `<i class="fa-solid ${desc.icon}"></i> ${topic.coords.name}: ${Math.round(weather.temperature)}°C · ${desc.label}`;
+        } else {
+            weatherBadge.style.display = "none";
+        }
+    }
 }
 
 
@@ -652,499 +527,300 @@ $$(".culture-filter").forEach((button) => {
 
 
 /* =========================================================
-   QUIZ DATA
+   DYNAMIC QUIZ SERVICE (POWERED BY THE TRIVIA API & OPEN TRIVIA DB)
 ========================================================= */
 
-const quizData = {
-
+const quizCategories = {
     civilization: {
-
         title: "Ancient India Challenge",
-
-        intro:
-            "Answer questions about India's ancient civilizations.",
-
-        questions: [
-
-            {
-                question:
-                    "Which civilization is famous for the Great Bath?",
-
-                options: [
-                    "Indus Valley Civilization",
-                    "Gupta Empire",
-                    "Maratha Empire",
-                    "Mughal Empire"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "Which site is associated with the Indus Valley Civilization?",
-
-                options: [
-                    "Mohenjo-daro",
-                    "Red Fort",
-                    "Raigad",
-                    "Hampi"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "What was a major feature of Harappan cities?",
-
-                options: [
-                    "Planned drainage",
-                    "Modern airports",
-                    "Iron railways",
-                    "Skyscrapers"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        intro: "Test your knowledge of the Indus Valley, Vedic period, and ancient cities.",
+        tag: "india",
+        category: "history"
     },
-
-
     puzzle: {
-
-        title: "Ancient Puzzle",
-
-        intro:
-            "Solve the historical puzzle.",
-
-        questions: [
-
-            {
-                question:
-                    "Harappan cities were mainly built using what material?",
-
-                options: [
-                    "Standardized bricks",
-                    "Steel",
-                    "Concrete skyscrapers",
-                    "Glass"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "Which structure is found at Mohenjo-daro?",
-
-                options: [
-                    "Great Bath",
-                    "India Gate",
-                    "Gateway of India",
-                    "Red Fort"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        title: "Ancient Puzzle Challenge",
+        intro: "Solve intriguing questions on ancient architecture and archaeology.",
+        tag: "india",
+        category: "history"
     },
-
-
     artifact: {
-
-        title: "Artifact Detective",
-
-        intro:
-            "Identify objects and archaeological clues.",
-
-        questions: [
-
-            {
-                question:
-                    "Archaeologists can learn about ancient societies by studying?",
-
-                options: [
-                    "Artifacts",
-                    "Only modern books",
-                    "Modern advertisements",
-                    "Computer games"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "Seals are associated strongly with which civilization?",
-
-                options: [
-                    "Indus Valley Civilization",
-                    "Modern India",
-                    "Maratha Empire",
-                    "Gupta Empire only"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        title: "Historical Artifacts Quiz",
+        intro: "Discover celebrated sculptures, seals, coins, and heritage artifacts.",
+        tag: "india",
+        category: "history"
     },
-
-
     monument: {
-
-        title: "Monument Explorer",
-
-        intro:
-            "Match monuments with their historical context.",
-
-        questions: [
-
-            {
-                question:
-                    "Hampi is associated with which empire?",
-
-                options: [
-                    "Vijayanagara",
-                    "Maurya",
-                    "Mughal",
-                    "Indus Valley"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "Brihadisvara Temple is associated with?",
-
-                options: [
-                    "Cholas",
-                    "Mughals",
-                    "Mauryas",
-                    "Marathas"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "Qutb Minar is located in?",
-
-                options: [
-                    "Delhi",
-                    "Patna",
-                    "Pune",
-                    "Chennai"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        title: "Monuments & Architecture Quiz",
+        intro: "Explore magnificent temples, UNESCO World Heritage sites, and forts.",
+        tag: "india",
+        category: "history"
     },
-
-
     symbols: {
-
-        title: "Symbols of India",
-
-        intro:
-            "Discover important Indian historical symbols.",
-
-        questions: [
-
-            {
-                question:
-                    "The Lion Capital is associated with which ruler?",
-
-                options: [
-                    "Ashoka",
-                    "Shivaji Maharaj",
-                    "Babur",
-                    "Krishnadevaraya"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "The Lion Capital is associated with?",
-
-                options: [
-                    "Sarnath",
-                    "Hampi",
-                    "Raigad",
-                    "Mohenjo-daro"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        title: "Historical Symbols & Emblems",
+        intro: "Learn about the Ashoka Chakra, royal seals, and historical emblems.",
+        tag: "india",
+        category: "history"
     },
-
-
     painting: {
-
-        title: "Traditional Art Challenge",
-
-        intro:
-            "Test your knowledge of Indian traditional art.",
-
-        questions: [
-
-            {
-                question:
-                    "Madhubani painting is strongly associated with which region?",
-
-                options: [
-                    "Mithila",
-                    "Kashmir",
-                    "Rajasthan only",
-                    "Kerala only"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "Warli art is associated especially with?",
-
-                options: [
-                    "Maharashtra",
-                    "Punjab",
-                    "Assam",
-                    "Bihar"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        title: "Traditional Arts & Culture Quiz",
+        intro: "Test your knowledge of Madhubani, Warli, Gond, and classical arts.",
+        tag: "india",
+        category: "arts_and_literature"
     },
-
-
     freedom: {
-
-        title: "Freedom Journey",
-
-        intro:
-            "Explore India's journey toward independence.",
-
-        questions: [
-
-            {
-                question:
-                    "India became independent in?",
-
-                options: [
-                    "1947",
-                    "1950",
-                    "1942",
-                    "1935"
-                ],
-
-                answer: 0
-            },
-
-            {
-                question:
-                    "The Constitution of India came into effect in?",
-
-                options: [
-                    "1950",
-                    "1947",
-                    "1942",
-                    "1960"
-                ],
-
-                answer: 0
-            }
-
-        ]
-
+        title: "Freedom Movement & Modern India",
+        intro: "Relive India's historic struggle for independence and national democracy.",
+        tag: "india",
+        category: "history"
     }
-
 };
 
+/* Verified Indian history question pool as resilient fallback */
+const indianHistoryFallbackBank = [
+    {
+        question: "Which ancient civilization built the Great Bath and planned cities with advanced brick drainage?",
+        options: ["Indus Valley Civilization", "Gupta Empire", "Maratha Empire", "Mughal Empire"],
+        answer: 0
+    },
+    {
+        question: "Who was the renowned Mauryan emperor whose rock and pillar edicts spread messages of Dhamma across South Asia?",
+        options: ["Ashoka the Great", "Chandragupta II", "Harsha", "Kanishka"],
+        answer: 0
+    },
+    {
+        question: "The Lion Capital of Sarnath, adopted as India's State Emblem, was created during the reign of which dynasty?",
+        options: ["Maurya Dynasty", "Chola Dynasty", "Gupta Dynasty", "Kushan Dynasty"],
+        answer: 0
+    },
+    {
+        question: "The Brihadisvara Temple at Thanjavur, built of solid granite, was commissioned by which Chola emperor?",
+        options: ["Rajaraja I", "Rajendra I", "Karikala", "Kulothunga I"],
+        answer: 0
+    },
+    {
+        question: "Which UNESCO World Heritage city in Karnataka was the magnificent capital of the Vijayanagara Empire?",
+        options: ["Hampi", "Badami", "Pattadakal", "Aihole"],
+        answer: 0
+    },
+    {
+        question: "The traditional Warli tribal art, created using rice paste and geometric shapes, originates from which Indian state?",
+        options: ["Maharashtra", "Bihar", "Rajasthan", "Kerala"],
+        answer: 0
+    },
+    {
+        question: "In what year did India officially become an independent sovereign nation?",
+        options: ["1947", "1950", "1942", "1935"],
+        answer: 0
+    },
+    {
+        question: "The Madhubani or Mithila folk painting tradition is indigenous to which state of India?",
+        options: ["Bihar", "Odisha", "Gujarat", "West Bengal"],
+        answer: 0
+    },
+    {
+        question: "Who was the architect of the Indian Constitution and Chairman of its Drafting Committee?",
+        options: ["Dr. B. R. Ambedkar", "Jawaharlal Nehru", "Sardar Vallabhbhai Patel", "Dr. Rajendra Prasad"],
+        answer: 0
+    },
+    {
+        question: "Which ancient mathematician and astronomer of Pataliputra calculated pi and explained solar and lunar eclipses?",
+        options: ["Aryabhata", "Brahmagupta", "Varahamihira", "Bhaskara II"],
+        answer: 0
+    }
+];
+
+let currentQuizState = {
+    key: null,
+    title: "",
+    intro: "",
+    questions: [],
+    questionIndex: 0,
+    score: 0
+};
+
+/* Shuffle utility */
+function shuffleArray(arr) {
+    const shuffled = [...arr];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+/* Fetch dynamic quiz questions from public Trivia APIs */
+async function fetchDynamicQuiz(catKey) {
+    const cat = quizCategories[catKey] || quizCategories.civilization;
+
+    // Try The Trivia API with tag=india first
+    try {
+        const url = `https://the-trivia-api.com/v2/questions?tags=${cat.tag}&limit=5`;
+        const res = await fetch(url, { signal: AbortSignal.timeout(3500) });
+        if (res.ok) {
+            const data = await res.json();
+            if (Array.isArray(data) && data.length >= 3) {
+                return data.map(item => {
+                    const allOptions = shuffleArray([item.correctAnswer, ...item.incorrectAnswers]);
+                    return {
+                        question: item.question.text,
+                        options: allOptions,
+                        answer: allOptions.indexOf(item.correctAnswer),
+                        source: "The Trivia API"
+                    };
+                });
+            }
+        }
+    } catch (e) {
+        console.warn("The Trivia API fetch failed, trying Open Trivia DB:", e);
+    }
+
+    // Try Open Trivia Database (History Category 23)
+    try {
+        const url = `https://opentdb.com/api.php?amount=5&category=23&type=multiple`;
+        const res = await fetch(url, { signal: AbortSignal.timeout(3500) });
+        if (res.ok) {
+            const data = await res.json();
+            if (data.results && data.results.length >= 3) {
+                return data.results.map(item => {
+                    // Decode HTML entities
+                    const parser = new DOMParser();
+                    const decode = str => parser.parseFromString(str, "text/html").body.textContent;
+                    const correct = decode(item.correct_answer);
+                    const incorrect = item.incorrect_answers.map(decode);
+                    const allOptions = shuffleArray([correct, ...incorrect]);
+                    return {
+                        question: decode(item.question),
+                        options: allOptions,
+                        answer: allOptions.indexOf(correct),
+                        source: "Open Trivia DB"
+                    };
+                });
+            }
+        }
+    } catch (e) {
+        console.warn("Open Trivia DB fetch failed:", e);
+    }
+
+    // Graceful fallback from verified bank
+    const shuffledPool = shuffleArray(indianHistoryFallbackBank).slice(0, 5);
+    return shuffledPool.map(q => {
+        const correctOpt = q.options[q.answer];
+        const shuffledOpts = shuffleArray(q.options);
+        return {
+            question: q.question,
+            options: shuffledOpts,
+            answer: shuffledOpts.indexOf(correctOpt),
+            source: "Verified Heritage Quiz"
+        };
+    });
+}
 
 /* =========================================================
    QUIZ ENGINE
 ========================================================= */
 
-let currentGameKey = null;
-let currentQuestion = 0;
-let currentScore = 0;
-
-
-function startQuiz(key) {
-
-    const game = quizData[key];
-
-    if (!game) return;
-
-    currentGameKey = key;
-
-    currentQuestion = 0;
-
-    currentScore = 0;
+async function startQuiz(key) {
+    const meta = quizCategories[key] || quizCategories.civilization;
+    currentQuizState.key = key;
+    currentQuizState.title = meta.title;
+    currentQuizState.intro = meta.intro;
+    currentQuizState.questionIndex = 0;
+    currentQuizState.score = 0;
 
     $("#gameModal").classList.add("active");
-
-    $("#gameTitle").textContent = game.title;
-
-    $("#gameIntro").textContent = game.intro;
-
+    $("#gameTitle").textContent = meta.title;
+    $("#gameIntro").textContent = meta.intro;
     $("#gameScore").textContent = "0";
 
-    showQuestion();
-
-}
-
-
-function showQuestion() {
-
-    const game = quizData[currentGameKey];
-
-    const question =
-        game.questions[currentQuestion];
-
-    $("#gameQuestion").textContent =
-        question.question;
-
+    // Show loading state
+    $("#gameQuestion").innerHTML = `<div style="text-align:center; padding: 20px 0;"><i class="fa-solid fa-spinner fa-spin" style="font-size: 1.6rem; color: #fbbf24; margin-bottom: 10px;"></i><p>Loading live quiz questions from Public Trivia API...</p></div>`;
     $("#gameOptions").innerHTML = "";
-
     $("#nextGameBtn").disabled = true;
 
-    question.options.forEach((option, index) => {
-
-        const button =
-            document.createElement("button");
-
-        button.className = "quiz-option";
-
-        button.textContent = option;
-
-        button.addEventListener("click", () => {
-
-            checkAnswer(index, button);
-
-        });
-
-        $("#gameOptions").appendChild(button);
-
-    });
-
+    // Fetch live questions
+    currentQuizState.questions = await fetchDynamicQuiz(key);
+    showQuestion();
 }
 
+function showQuestion() {
+    const q = currentQuizState.questions[currentQuizState.questionIndex];
+    if (!q) {
+        finishQuiz();
+        return;
+    }
+
+    $("#gameQuestion").innerHTML = `
+        <div style="font-size: 0.75rem; text-transform: uppercase; color: #fbbf24; font-weight: 700; margin-bottom: 6px;">
+            Question ${currentQuizState.questionIndex + 1} of ${currentQuizState.questions.length} · <span style="opacity:0.8;">${q.source || "Live API"}</span>
+        </div>
+        <div>${q.question}</div>
+    `;
+
+    $("#gameOptions").innerHTML = "";
+    $("#nextGameBtn").disabled = true;
+
+    q.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.className = "quiz-option";
+        button.textContent = option;
+        button.addEventListener("click", () => {
+            checkAnswer(index, button);
+        });
+        $("#gameOptions").appendChild(button);
+    });
+}
 
 function checkAnswer(index, clickedButton) {
-
-    const game = quizData[currentGameKey];
-
-    const question =
-        game.questions[currentQuestion];
-
-    const buttons =
-        $$("#gameOptions .quiz-option");
+    const q = currentQuizState.questions[currentQuizState.questionIndex];
+    const buttons = $$("#gameOptions .quiz-option");
 
     buttons.forEach((button) => {
         button.disabled = true;
     });
 
-
-    if (index === question.answer) {
-
+    if (index === q.answer) {
         clickedButton.classList.add("correct");
-
-        currentScore += 10;
-
-        $("#gameScore").textContent =
-            currentScore;
-
+        currentQuizState.score += 10;
+        $("#gameScore").textContent = currentQuizState.score;
         showToast("Correct! +10 points");
-
     } else {
-
         clickedButton.classList.add("wrong");
-
-        buttons[question.answer]
-            .classList.add("correct");
-
-        showToast("Not quite. Try the next one!");
-
+        if (buttons[q.answer]) {
+            buttons[q.answer].classList.add("correct");
+        }
+        showToast("Incorrect. Better luck on the next one!");
     }
-
 
     $("#nextGameBtn").disabled = false;
-
 }
 
-
 $("#nextGameBtn").addEventListener("click", () => {
-
-    const game = quizData[currentGameKey];
-
-    currentQuestion++;
-
-    if (
-        currentQuestion >=
-        game.questions.length
-    ) {
-
+    currentQuizState.questionIndex++;
+    if (currentQuizState.questionIndex >= currentQuizState.questions.length) {
         finishQuiz();
-
     } else {
-
         showQuestion();
-
     }
-
 });
 
-
 function finishQuiz() {
-
-    $("#gameQuestion").textContent =
-        `Great job! You completed the game with ${currentScore} points.`;
+    $("#gameQuestion").innerHTML = `
+        <div style="text-align: center; padding: 10px 0;">
+            <div style="font-size: 2.4rem; margin-bottom: 8px;">🎉</div>
+            <h3 style="margin-bottom: 8px;">Quiz Completed!</h3>
+            <p>You scored <strong>${currentQuizState.score}</strong> points across ${currentQuizState.questions.length} live questions.</p>
+        </div>
+    `;
 
     $("#gameOptions").innerHTML = "";
-
-    $("#nextGameBtn").textContent =
-        "Play Again";
-
+    $("#nextGameBtn").textContent = "Play New Round";
     $("#nextGameBtn").disabled = false;
 
     $("#nextGameBtn").onclick = () => {
-
-        $("#nextGameBtn").textContent =
-            "Next";
-
+        $("#nextGameBtn").textContent = "Next";
         $("#nextGameBtn").onclick = null;
-
-        currentQuestion = 0;
-
-        currentScore = 0;
-
-        $("#gameScore").textContent = "0";
-
-        showQuestion();
-
+        startQuiz(currentQuizState.key);
     };
-
 }
 
 
@@ -1480,257 +1156,222 @@ function updateRoyalResult() {
 
 
 /* =========================================================
-   RANDOM FACTS
+   DYNAMIC HERITAGE FACTS (POWERED BY WIKIPEDIA REST APIS)
 ========================================================= */
 
-const facts = [
-
-    "Mohenjo-daro is known for its carefully planned streets and drainage system.",
-
-    "The Great Bath is one of the most famous structures at Mohenjo-daro.",
-
-    "Ashoka's inscriptions provide important evidence about Mauryan history.",
-
-    "Hampi contains extensive archaeological remains of the Vijayanagara period.",
-
-    "Chola temples demonstrate remarkable achievements in South Indian architecture.",
-
-    "Indian traditional arts often preserve stories, beliefs and community traditions.",
-
-    "Forts were adapted to different geographical environments such as hills and coastlines.",
-
-    "India became independent on 15 August 1947.",
-
-    "The Constitution of India came into effect on 26 January 1950."
-
+const heritageFactTopics = [
+    { slug: "Indus_Valley_Civilisation", title: "Indus Valley Civilization" },
+    { slug: "Ashoka", title: "Emperor Ashoka" },
+    { slug: "Hampi", title: "Hampi Monuments" },
+    { slug: "Brihadisvara_Temple", title: "Brihadisvara Temple" },
+    { slug: "Ajanta_Caves", title: "Ajanta Caves" },
+    { slug: "Ellora_Caves", title: "Ellora Caves" },
+    { slug: "Konark_Sun_Temple", title: "Konark Sun Temple" },
+    { slug: "Taj_Mahal", title: "The Taj Mahal" },
+    { slug: "Chhatrapati_Shivaji_Maharaj", title: "Chhatrapati Shivaji Maharaj" },
+    { slug: "Nalanda_mahavihara", title: "Ancient Nalanda University" },
+    { slug: "Sanchi", title: "Great Stupa at Sanchi" },
+    { slug: "Red_Fort", title: "Red Fort of Delhi" },
+    { slug: "Qutb_Minar", title: "Qutb Minar" },
+    { slug: "Meenakshi_Temple", title: "Madurai Meenakshi Temple" },
+    { slug: "Khajuraho_Group_of_Monuments", title: "Khajuraho Monuments" },
+    { slug: "Aryabhata", title: "Aryabhata (Astronomer & Mathematician)" },
+    { slug: "Varanasi", title: "Varanasi (Kashi)" },
+    { slug: "Charminar", title: "Charminar of Hyderabad" },
+    { slug: "Golconda_Fort", title: "Golconda Fort" },
+    { slug: "Madhubani_art", title: "Madhubani Art" },
+    { slug: "Warli_painting", title: "Warli Art" },
+    { slug: "History_of_the_Republic_of_India", title: "Constitution & Republic of India" }
 ];
 
+let lastFactTopicIndex = -1;
 
-let factIndex = 0;
+async function fetchDynamicFact() {
+    const factTextEl = $("#factText");
+    const factTopicEl = $("#factTopic");
+    const factLinkEl = $("#factLink");
+    const newFactBtn = $("#newFact");
 
-
-$("#newFact").addEventListener(
-    "click",
-    () => {
-
-        factIndex++;
-
-        if (factIndex >= facts.length) {
-            factIndex = 0;
-        }
-
-        $("#factText").textContent =
-            facts[factIndex];
-
+    if (newFactBtn) {
+        newFactBtn.disabled = true;
+        const icon = newFactBtn.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-spinner fa-spin";
     }
-);
+
+    // Pick a random topic different from the last one
+    let nextIdx = Math.floor(Math.random() * heritageFactTopics.length);
+    if (nextIdx === lastFactTopicIndex) {
+        nextIdx = (nextIdx + 1) % heritageFactTopics.length;
+    }
+    lastFactTopicIndex = nextIdx;
+    const selected = heritageFactTopics[nextIdx];
+
+    try {
+        const data = await fetchWikipediaSummary(selected.slug);
+        if (data && data.extract) {
+            if (factTopicEl) factTopicEl.textContent = `WIKIPEDIA FACT · ${data.title.toUpperCase()}`;
+            if (factTextEl) factTextEl.textContent = data.extract;
+            if (factLinkEl) {
+                factLinkEl.href = `https://en.wikipedia.org/wiki/${encodeURIComponent(selected.slug)}`;
+                factLinkEl.style.display = "inline-flex";
+            }
+        } else {
+            throw new Error("Empty extract");
+        }
+    } catch (e) {
+        if (factTopicEl) factTopicEl.textContent = "HERITAGE FACT";
+        if (factTextEl) factTextEl.textContent = "Mohenjo-daro and Harappa featured standardized baked bricks and world-renowned underground municipal drainage systems over 4,500 years ago.";
+        if (factLinkEl) factLinkEl.style.display = "none";
+    } finally {
+        if (newFactBtn) {
+            newFactBtn.disabled = false;
+            const icon = newFactBtn.querySelector("i");
+            if (icon) icon.className = "fa-solid fa-wand-magic-sparkles";
+        }
+    }
+}
+
+$("#newFact").addEventListener("click", fetchDynamicFact);
 
 
 /* =========================================================
-   CHATBOT
+   CHATBOT (POWERED BY WIKIPEDIA SEARCH & REST APIs)
 ========================================================= */
 
 const chatbot = $("#chatbot");
 
-$("#chatOpenNav").addEventListener(
-    "click",
-    () => {
+$("#chatOpenNav").addEventListener("click", () => {
+    chatbot.classList.add("active");
+});
 
-        chatbot.classList.add("active");
+$("#floatingChat").addEventListener("click", () => {
+    chatbot.classList.toggle("active");
+});
 
-    }
-);
+$("#closeChat").addEventListener("click", () => {
+    chatbot.classList.remove("active");
+});
 
+function addChatMessage(content, type, isHTML = false) {
+    const message = document.createElement("div");
+    message.className = type === "user" ? "user-message" : "bot-message";
 
-$("#floatingChat").addEventListener(
-    "click",
-    () => {
-
-        chatbot.classList.toggle("active");
-
-    }
-);
-
-
-$("#closeChat").addEventListener(
-    "click",
-    () => {
-
-        chatbot.classList.remove("active");
-
-    }
-);
-
-
-const botResponses = [
-
-    {
-        keywords: ["indus", "harappa", "mohenjo"],
-
-        response:
-            "The Indus Valley Civilization was an ancient urban civilization known for planned cities, standardized bricks, drainage systems and structures such as the Great Bath."
-    },
-
-    {
-        keywords: ["ashoka", "maurya"],
-
-        response:
-            "Ashoka was a major Mauryan ruler. His inscriptions across the subcontinent provide valuable evidence about his policies and ideas."
-    },
-
-    {
-        keywords: ["gupta"],
-
-        response:
-            "The Gupta period is associated with important achievements in mathematics, astronomy, Sanskrit literature, art and architecture."
-    },
-
-    {
-        keywords: ["chola"],
-
-        response:
-            "The Cholas were a major South Indian power known especially for monumental temples, bronze sculpture, administration and maritime activity."
-    },
-
-    {
-        keywords: ["mughal"],
-
-        response:
-            "The Mughal Empire influenced architecture, gardens, painting, administration and cultural traditions across large parts of India."
-    },
-
-    {
-        keywords: ["maratha", "shivaji"],
-
-        response:
-            "Shivaji Maharaj is remembered for establishing an important Maratha state and for his administration and strategic use of forts."
-    },
-
-    {
-        keywords: ["culture", "art"],
-
-        response:
-            "India has diverse artistic traditions including Madhubani, Warli, Gond, textile crafts, sculpture and temple art."
+    if (isHTML) {
+        message.innerHTML = content;
+    } else {
+        message.textContent = content;
     }
 
-];
+    $("#chatMessages").appendChild(message);
+    $("#chatMessages").scrollTop = $("#chatMessages").scrollHeight;
+    return message;
+}
 
+/* Query Wikipedia API to fetch rich answers dynamically */
+async function queryHeritageAPI(userInput) {
+    const cleanQuery = userInput.trim();
 
-function getBotResponse(message) {
+    try {
+        // Step 1: Search Wikipedia for relevant articles
+        const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(cleanQuery + " India history")}&utf8=&format=json&origin=*`;
+        const searchRes = await fetch(searchUrl, { signal: AbortSignal.timeout(5000) });
 
-    const text =
-        message.toLowerCase();
+        if (!searchRes.ok) throw new Error("Search failed");
+        const searchData = await searchRes.json();
 
-
-    for (const item of botResponses) {
-
-        if (
-            item.keywords.some(
-                keyword =>
-                    text.includes(keyword)
-            )
-        ) {
-
-            return item.response;
-
+        const searchHits = searchData?.query?.search || [];
+        if (searchHits.length === 0) {
+            return {
+                title: "HeritageBot",
+                text: "I couldn't find a direct historical record matching your question. Try asking about the Indus Valley Civilization, Ashoka, Chola Empire, Mughals, Marathas, Ajanta Caves, or traditional Indian arts!",
+                url: null,
+                image: null
+            };
         }
 
+        // Pick best matching title
+        const topTitle = searchHits[0].title;
+
+        // Step 2: Fetch article summary
+        const summaryData = await fetchWikipediaSummary(topTitle.replace(/ /g, "_"));
+
+        if (!summaryData || !summaryData.extract) {
+            return {
+                title: topTitle,
+                text: searchHits[0].snippet.replace(/<[^>]+>/g, ""),
+                url: `https://en.wikipedia.org/wiki/${encodeURIComponent(topTitle)}`,
+                image: null
+            };
+        }
+
+        return {
+            title: summaryData.title,
+            text: summaryData.extract,
+            url: `https://en.wikipedia.org/wiki/${encodeURIComponent(summaryData.title.replace(/ /g, "_"))}`,
+            image: summaryData.thumbnail ? summaryData.thumbnail.source : null
+        };
+    } catch (err) {
+        console.warn("Wikipedia chatbot query error:", err);
+        return {
+            title: "Heritage Assistant",
+            text: "India possesses one of the world's most ancient living civilizations, spanning the Indus Valley, Maurya, Gupta, Chola, and Mughal periods, with timeless monuments and vibrant cultural arts.",
+            url: "https://en.wikipedia.org/wiki/Culture_of_India",
+            image: null
+        };
     }
-
-
-    return "I can help you learn about the Indus Valley Civilization, Ashoka, Gupta period, Cholas, Mughals, Marathas, Indian art and culture. Try asking me about one of these topics.";
-
 }
 
-
-function addChatMessage(text, type) {
-
-    const message =
-        document.createElement("div");
-
-    message.className =
-        type === "user"
-            ? "user-message"
-            : "bot-message";
-
-    message.textContent = text;
-
-    $("#chatMessages")
-        .appendChild(message);
-
-    $("#chatMessages").scrollTop =
-        $("#chatMessages").scrollHeight;
-
-}
-
-
-function sendMessage() {
-
+async function sendMessage() {
     const input = $("#chatInput");
-
-    const text =
-        input.value.trim();
-
-
+    const text = input.value.trim();
     if (!text) return;
 
-
-    addChatMessage(
-        text,
-        "user"
-    );
-
+    addChatMessage(text, "user");
     input.value = "";
 
+    // Show live typing bubble
+    const typingIndicator = addChatMessage(
+        `<i class="fa-solid fa-circle-notch fa-spin"></i> HeritageBot is searching Wikipedia...`,
+        "bot",
+        true
+    );
+    typingIndicator.classList.add("bot-typing");
 
-    setTimeout(() => {
+    // Fetch dynamic response from Wikipedia
+    const result = await queryHeritageAPI(text);
 
-        addChatMessage(
-            getBotResponse(text),
-            "bot"
-        );
+    // Remove typing indicator
+    typingIndicator.remove();
 
-    }, 400);
+    // Render rich response card
+    let botHTML = `<div class="bot-card">`;
+    botHTML += `<strong style="color: #fbbf24;"><i class="fa-brands fa-wikipedia-w"></i> ${result.title}</strong>`;
+    if (result.image) {
+        botHTML += `<img class="bot-card-thumb" src="${result.image}" alt="${result.title}">`;
+    }
+    botHTML += `<p style="margin: 4px 0; line-height: 1.45;">${result.text}</p>`;
+    if (result.url) {
+        botHTML += `<a class="bot-link" href="${result.url}" target="_blank" rel="noopener noreferrer">Read full article on Wikipedia <i class="fa-solid fa-arrow-up-right-from-square"></i></a>`;
+    }
+    botHTML += `</div>`;
 
+    addChatMessage(botHTML, "bot", true);
 }
 
+$("#sendChat").addEventListener("click", sendMessage);
 
-$("#sendChat").addEventListener(
-    "click",
-    sendMessage
-);
-
-
-$("#chatInput").addEventListener(
-    "keydown",
-    (event) => {
-
-        if (event.key === "Enter") {
-
-            sendMessage();
-
-        }
-
+$("#chatInput").addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        sendMessage();
     }
-);
+});
 
-
-$$(".quick-questions button")
-    .forEach((button) => {
-
-        button.addEventListener(
-            "click",
-            () => {
-
-                $("#chatInput").value =
-                    button.dataset.question;
-
-                sendMessage();
-
-            }
-        );
-
+$$(".quick-questions button").forEach((button) => {
+    button.addEventListener("click", () => {
+        $("#chatInput").value = button.dataset.question;
+        sendMessage();
     });
+});
 
 
 /* =========================================================
@@ -3945,8 +3586,7 @@ $("#year").textContent =
    INITIAL FACT
 ========================================================= */
 
-$("#factText").textContent =
-    facts[0];
+fetchDynamicFact();
 
 
 /* =========================================================
