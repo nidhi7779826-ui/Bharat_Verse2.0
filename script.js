@@ -3105,51 +3105,30 @@ $("#threeDNext").addEventListener(
 );
 
 
-/* =========================================================
-   3D HINT
-========================================================= */
-
+/*3D HINT*/
 $("#threeDHint").addEventListener(
     "click",
     () => {
-
         const game =
             threeDGameData[threeDMode];
-
         const task =
             game.tasks[threeDTask];
-
         const answer =
             task.options[task.answer];
-
-
         if (threeDScore >= 5) {
-
             threeDScore -= 5;
-
             $("#threeDScore").textContent =
                 threeDScore;
-
         }
-
-
         $("#threeDHierarchy").textContent =
             `Hint: Think about "${answer}".`;
-
     }
 );
-
-
-/* =========================================================
-   3D RESTART
-========================================================= */
-
+/*  3D RESTART*/
 $("#threeDRestart").addEventListener(
     "click",
     () => {
-
         init3DGame();
-
         showToast(
             "3D game restarted"
         );
@@ -3157,34 +3136,22 @@ $("#threeDRestart").addEventListener(
     }
 );
 
-
-/* =========================================================
-   3D MOUSE INTERACTION
-========================================================= */
-
+/*  3D MOUSE INTERACTION*/
 function updateMouse(event) {
-
     const rect =
         renderer3D.domElement
             .getBoundingClientRect();
-
-
     mouse3D.x =
         ((event.clientX - rect.left) /
             rect.width) *
             2 - 1;
-
-
     mouse3D.y =
         -(
             (event.clientY - rect.top) /
             rect.height
         ) *
             2 + 1;
-
 }
-
-
 function handle3DPointerDown(event) {
 
     dragState.active = true;
@@ -3261,110 +3228,65 @@ function handle3DClick(event) {
             threeDObjects,
             true
         );
-
-
     if (!intersects.length) {
-
         return;
-
     }
-
-
     const object =
         intersects[0].object;
-
-
     let target =
         object;
-
-
     while (
         target.parent &&
         target.parent !== scene3D &&
         !target.userData.type
     ) {
-
         target =
             target.parent;
-
     }
-
-
     selected3DObject =
         target;
-
-
     const type =
         target.userData.type ||
         "historical structure";
-
-
     const messages = {
-
         house:
             "House: Harappan settlements contained organized residential areas.",
-
         road:
             "Road: Planned streets were an important part of Harappan urban organization.",
-
         bath:
             "Great Bath: A major brick-lined water structure at Mohenjo-daro.",
-
         well:
             "Well: Wells could provide water for settlements.",
-
         foundation:
             "Foundation: A strong base supports the temple structure.",
-
         pillar:
             "Pillar: Pillars are important structural and decorative elements.",
-
         tower:
             "Temple tower: The upper structure forms an important visual element.",
-
         wall:
             "Fort wall: Strong walls helped protect settlements and important spaces.",
-
         gate:
             "Fort gate: Gates controlled movement into and out of the fort.",
-
         watchtower:
             "Watchtower: Elevated positions could help defenders observe the surrounding area.",
-
         pot:
             "Pottery: Ceramic objects can provide archaeologists with clues about daily life.",
-
         seal:
             "Seal: Seals are important archaeological objects associated with the Indus tradition.",
-
         figurine:
             "Figurine: Small figures can provide clues about artistic traditions.",
-
         lamp:
             "Lamp: Objects associated with daily life help archaeologists understand ancient activities.",
-
         throne:
-            "Throne: A royal seat can represent authority and courtly life."
-
+         "Throne: A royal seat can represent authority and courtly life."
     };
-
-
     $("#threeDHierarchy").textContent =
         messages[type] ||
         "This historical object is part of the interactive environment.";
-
 }
-
-
-/* =========================================================
-   3D TIMER
-========================================================= */
-
+/* 3D TIMER */
 function start3DTimer() {
-
     clearInterval(threeDTimer);
-
-
     threeDTimer =
         setInterval(() => {
 
@@ -3388,34 +3310,21 @@ function start3DTimer() {
                 showToast(
                     "Time is over!"
                 );
-
             }
 
         }, 1000);
 
 }
-
-
-/* =========================================================
-   3D ANIMATION
-   ONLY SUBTLE ROTATION
-========================================================= */
-
+/*3D ANIMATION ONLY SUBTLE ROTATION*/
 function animate3D() {
-
     if (!renderer3D || !scene3D) {
         return;
     }
-
-
     animation3D =
         requestAnimationFrame(
             animate3D
         );
-
-
     /* very subtle movement */
-
     threeDObjects.forEach(
         (object, index) => {
 
@@ -3427,7 +3336,6 @@ function animate3D() {
                 object.rotation.y +=
                     0.0008 *
                     (index % 2 === 0 ? 1 : -1);
-
             }
 
         }
@@ -3440,12 +3348,7 @@ function animate3D() {
     );
 
 }
-
-
-/* =========================================================
-   RESIZE
-========================================================= */
-
+/*RESIZE */
 function resize3D() {
 
     if (
@@ -3454,147 +3357,77 @@ function resize3D() {
     ) {
         return;
     }
-
-
     const container =
         $("#threeDCanvasWrap");
-
-
     const width =
         container.clientWidth;
-
     const height =
         container.clientHeight;
-
-
     camera3D.aspect =
         width / height;
-
     camera3D.updateProjectionMatrix();
-
-
     renderer3D.setSize(
         width,
         height
     );
-
 }
-
-
 window.addEventListener(
     "resize",
     resize3D
 );
-
-
-/* =========================================================
-   CLEANUP
-========================================================= */
-
+/*CLEANUP*/
 function cleanup3D() {
-
     clearInterval(
         threeDTimer
     );
-
-
     if (animation3D) {
-
         cancelAnimationFrame(
             animation3D
         );
-
         animation3D = null;
-
     }
-
-
     threeDObjects = [];
-
-
     if (renderer3D) {
-
         renderer3D.dispose();
-
         renderer3D = null;
-
     }
-
-
     scene3D = null;
-
 }
-
-
-/* =========================================================
-   CLOSE 3D
-========================================================= */
-
+/*CLOSE 3D */
 $("#close3DGame").addEventListener(
     "click",
     () => {
-
         $("#civilization3DModal")
             .classList.remove("active");
-
         cleanup3D();
-
     }
 );
-
-
-/* =========================================================
-   ESC KEY
-========================================================= */
-
+/* 
+   ESC KEy */
 document.addEventListener(
     "keydown",
     (event) => {
-
         if (event.key !== "Escape") {
             return;
         }
-
-
         $$(".modal").forEach(
             modal => modal.classList.remove(
                 "active"
             )
         );
-
-
         chatbot.classList.remove(
             "active"
         );
-
-
         cleanup3D();
-
     }
 );
-
-
-/* =========================================================
-   YEAR
-========================================================= */
-
+/*YEAR*/
 $("#year").textContent =
     new Date().getFullYear();
-
-
-/* =========================================================
-   INITIAL FACT
-========================================================= */
-
+/* INITIAL FACT*/
 fetchDynamicFact();
-
-
-/* =========================================================
-   INITIALIZE
-========================================================= */
-
+/*INITIALIZE */
 filterGames();
-
 console.log(
     "HeritageQuest loaded successfully."
 );
